@@ -1,8 +1,7 @@
 module.exports = {
-  testURL: 'http://localhost',
-  clearMocks: true,
-  roots: ['<rootDir>/src/'],
-  setupFiles: ['raf/polyfill', '<rootDir>/src/test/globals.js'],
-  setupTestFrameworkScriptFile: '<rootDir>/test-utils/setupTestFramework.js',
-  testPathIgnorePatterns: ['<rootDir>/src/native', '<rootDir>/src/primitives'],
+  haste: {
+    hasteImplModulePath: require.resolve('./noHaste.js'),
+  },
+  roots: ['<rootDir>/packages', '<rootDir>/scripts'],
+  rootDir: '../../packages/styled-components' /* process.cwd(), // something better later on */,
 };

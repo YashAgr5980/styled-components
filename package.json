@@ -9,14 +9,7 @@
   "old-scripts": {
     "build": "rollup -c",
     "prebuild": "rimraf dist",
-    "test": "run-s test:*",
-    "test:web": "jest",
-    "test:web:watch": "npm run test:web -- --watch",
-    "test:native": "jest -c .jest.native.json",
-    "test:native:watch": "npm run test:native -- --watch",
-    "test:primitives": "jest -c .jest.primitives.json",
-    "test:primitives:watch": "npm run test:primitives -- --watch",
-    "test:integration": "jest -c .jest.integration.json --runInBand --forceExit",
+    
     "size": "bundlesize",
     "flow": "flow check",
     "flow:watch": "flow-watch",
@@ -35,7 +28,15 @@
     "bs": "lerna bootstrap",
     "build": "lerna run build --stream --parallel",
     "clean":"lerna clean",
-    "dev": "lerna run dev --stream --parallel"
+    "dev": "lerna run dev --stream --parallel",
+    "test": "run-s test:*",
+    "test:web": "jest -c scripts/jest/config.main.js",
+    "test:web:watch": "npm run test:web -- --watch",
+    "test:native": "jest -c scripts/jest/config.native.js",
+    "test:native:watch": "npm run test:native -- --watch",
+    "test:primitives": "jest -c scripts/jest/config.primitives.js",
+    "test:primitives:watch": "npm run test:primitives -- --watch",
+    "test:integration": "jest -c .jest.integration.json --runInBand --forceExit"
   },
   "author": "Glen Maddern",
   "license": "MIT",
