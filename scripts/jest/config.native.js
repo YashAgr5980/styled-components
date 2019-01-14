@@ -1,0 +1,7 @@
+module.exports = {
+  rootDir: '.',
+  testRegex: './src/native/test/.*.js$',
+  preset: 'react-native',
+  testURL: 'http://localhost',
+  testEnvironment: 'jsdom',
+};
