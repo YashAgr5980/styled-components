@@ -1,8 +1,13 @@
 const baseConfig = require('./config.base');
 
-module.exports = Object.assign({}, baseConfig, {
+const copy = Object.assign({}, baseConfig);
+
+// react-native preset brings its own haste implementation
+delete copy.haste;
+
+module.exports = Object.assign(copy, {
   testRegex: 'src/native/test/.*.js$',
-  preset: '../../node_modules/react-native/jest/assetFileTransformer.js',
+  preset: 'react-native',
   testURL: 'http://localhost',
   testEnvironment: 'jsdom',
 });
